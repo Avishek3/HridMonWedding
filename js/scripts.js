@@ -9,9 +9,8 @@ $(document).ready(function () {
     });
     $('.wp2').waypoint(function () {
         $('.wp2').addClass('animated fadeInRight');
-    }, {
-        offset: '75%'
-    });
+}, { offset: '75%' });
+
     $('.wp3').waypoint(function () {
         $('.wp3').addClass('animated fadeInLeft');
     }, {
@@ -47,11 +46,62 @@ $(document).ready(function () {
     }, {
         offset: '75%'
     });
+$('#how-we-met-intro').waypoint(function () {
+    var plane = $('.plane');
 
-    /***************** Initiate Flexslider ******************/
-    $('.flexslider').flexslider({
-        animation: "slide"
+    // Reset plane at start
+    function flyPlane() {
+    plane.css({ opacity: 1, left: '-100px' });
+
+    // Animate across to just past US
+    plane.animate({
+        left: '90%'  // pushes beyond US column
+    }, 4000, 'swing', function () {
+        // Fade out after reaching US
+        // plane.fadeOut(1000);
+        flyPlane();
     });
+} 
+flyPlane();
+}, { offset: '70%' });
+
+// Desktop
+    $('.mon-img').waypoint(function () {
+        $(this.element).addClass('animated fadeInLeft');
+    }, { offset: '75%' });
+
+    $('.mon-quote-img').waypoint(function () {
+        $(this.element).addClass('animated fadeInUp');
+    }, { offset: '75%' });
+
+    // Mobile
+    $('.mon-img-mobile').waypoint(function () {
+        $(this.element).addClass('animated fadeInLeft');
+    }, { offset: '75%' });
+
+    $('.mon-quote-img-mobile').waypoint(function () {
+        $(this.element).addClass('animated fadeInUp');
+    }, { offset: '75%' });
+
+
+// Desktop
+    $('.avi-img').waypoint(function () {
+        $(this.element).addClass('animated fadeInRight');
+    }, { offset: '75%' });
+
+    $('.avi-quote-img').waypoint(function () {
+        $(this.element).addClass('animated fadeInUp');
+    }, { offset: '75%' });
+
+    // Mobile
+    $('.avi-img-mobile').waypoint(function () {
+        $(this.element).addClass('animated fadeInRight');
+    }, { offset: '75%' });
+
+    $('.avi-quote-img-mobile').waypoint(function () {
+        $(this.element).addClass('animated fadeInUp');
+    }, { offset: '75%' });
+
 
     /***************** Initiate Fancybox ******************/
 
@@ -146,14 +196,22 @@ $(document).ready(function () {
     s.parentNode.insertBefore(po, s);
 
     for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
-            'style="width:105px; height:21px;">' +
-            '</iframe>' +
+        var html = 
+        
+        // Twitter button
+        '<iframe allowtransparency="true" frameborder="0" scrolling="no" ' +
+        'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location.href) +
+        '&text=' + encodeURIComponent(document.title) +
+        '&via=ramswarooppatra&hashtags=ramandantara&count=horizontal" ' +
+        'style="width:105px; height:21px;"></iframe>' +
 
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
+        // Facebook Like button
+        '<iframe src="https://www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location.href) +
+        '&width=150&layout=button_count&action=like&show_faces=false&share=true&height=21&appId=101094500229731" ' +
+        'scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
 
-            '<div class="g-plusone" data-size="medium"></div>';
+        // Google +1 button
+        '<div class="g-plusone" data-size="medium"></div>';
 
         // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
 
@@ -175,6 +233,25 @@ $(document).ready(function () {
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
 
+    // Map 1
+    $('#btn-show-map-1').click(function () {
+        $('#map-content-1').toggleClass('toggle-map-content');
+        $('#btn-show-content-1').toggleClass('toggle-map-content');
+    });
+    $('#btn-show-content-1').click(function () {
+        $('#map-content-1').toggleClass('toggle-map-content');
+        $('#btn-show-content-1').toggleClass('toggle-map-content');
+    });
+
+    // Map 2
+    $('#btn-show-map-2').click(function () {
+        $('#map-content-2').toggleClass('toggle-map-content');
+        $('#btn-show-content-2').toggleClass('toggle-map-content');
+    });
+    $('#btn-show-content-2').click(function () {
+        $('#map-content-2').toggleClass('toggle-map-content');
+        $('#btn-show-content-2').toggleClass('toggle-map-content');
+    });
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
         options: {
@@ -252,6 +329,10 @@ function initMap() {
         position: location,
         map: map
     });
+
+    initMap1();
+    initMap2();
+
 }
 
 function initBBSRMap() {
@@ -267,6 +348,32 @@ function initBBSRMap() {
         map: map
     });
 }
+
+function initMaps() {
+        // Map 1
+        var location1 = {lat: 23.540306855636587, lng: 87.29263718650569};
+        var map1 = new google.maps.Map(document.getElementById('map-canvas-1'), {
+            zoom: 15,
+            center: location1,
+            scrollwheel: false
+        });
+        new google.maps.Marker({
+            position: location1,
+            map: map1
+        });
+
+        // Map 2
+        var location2 = {lat: 22.62242372373193, lng: 88.4493583230453};
+        var map2 = new google.maps.Map(document.getElementById('map-canvas-2'), {
+            zoom: 15,
+            center: location2,
+            scrollwheel: false
+        });
+        new google.maps.Marker({
+            position: location2,
+            map: map2
+        });
+    }
 
 // alert_markup
 function alert_markup(alert_type, msg) {

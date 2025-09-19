@@ -2,6 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+
 // Imports
 //@import "compass";
 @import "partials/typography";
@@ -37,7 +45,7 @@ a:hover, a:focus {
   text-decoration: none;
 }
 body {
-  font-family: $sans-serif;
+  font-family: $serif;
   font-weight: $light;
   color: $txt-primary;
   -webkit-text-size-adjust: 100%;
@@ -252,7 +260,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../img/Prewedding1.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -323,6 +331,12 @@ header {
   ul.primary-nav {
     margin: 0 0 0 75px;
     padding: 0;
+    //font-family: 'Raleway', sans-serif;
+    font-family: 'Dancing Script', cursive; // playful & romantic
+
+    // font-size: 200px;  // increase size as desired
+    // font-weight: 700; // bold
+    // font-family: 'Meow Script', cursive;
 
     li {
       display: inline;
@@ -330,6 +344,10 @@ header {
       a {
         color: $txt-light;
         padding-right: 25px;
+        font-size: 25px;  
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2); // subtle depth
+        transition: color 0.3s ease;
+        text-transform: capitalize;  // first letter uppercase
 
         &:hover {
           color: $accent-color;
@@ -341,11 +359,14 @@ header {
     }
   }
   ul.member-actions {
+    font-family: 'Dancing Script', cursive; // playful & romantic
     li {
       display: inline;
 
       a {
         color: $txt-light;
+        font-size: 25px;  
+        text-transform: capitalize;
 
         &:hover {
           color: $accent-color;
@@ -726,7 +747,7 @@ Engagement Pics
 Embed video
 ========================================================================== */
 #video-bg {
-  height: 300px;
+  height: 400px;
 }
 #video-content {
   width: 100%;
@@ -898,4 +919,280 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+.poem-wrapper {
+  position: relative;
+}
+
+// .flight-scene {
+//   position: absolute;   /* instead of relative */
+//   bottom: 20%;          /* overlay around lower part of poem */
+//   left: 50%;
+//   transform: translateX(-50%);
+//   min-height: auto;     /* you don’t need forced height now */
+// }
+
+// .country {
+//   width: 120px;         /* smaller so it doesn’t dominate text */
+//   z-index: 1;
+//   opacity: 0.8;         /* slightly faded so text is readable */
+// }
+
+.plane {
+  width: 80px;
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  z-index: 10;
+  opacity: 1;
+}
+
+.flight-scene {
+  position: relative;
+  margin-top: 30px;
+  min-height: 150px; // gives space for animation
+}
+
+.country {
+  width: 400px;
+  position: relative;
+  z-index: 1; /* keep countries lower than plane */
+}
+
+.plane {
+  opacity: 0;
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  z-index: 10; /* plane above countries */
+  left: -100px; // start offscreen near UK
+}
+
+
+.mon-img, .mon-img-mobile {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    visibility: hidden;
+}
+
+.mon-quote-img, .mon-quote-img-mobile {
+    width: 90%;
+    height: auto;
+    visibility: hidden;
+}
+
+
+
+.animated { visibility: visible; }
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.avi-img, .avi-img-mobile {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    visibility: hidden;
+}
+
+.avi-quote-img, .avi-quote-img-mobile {
+    width: 90%;
+    height: auto;
+    visibility: hidden;
+}
+
+/* Make visible when animated */
+.animated { visibility: visible; }
+
+/* Avi Animations */
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft; /* same as Mon’s left fade */
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+/* Keyframes for Avi image coming from right */
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Keyframes for quote coming from left (can reuse Mon's fadeInLeft) */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Common container for snapshot or reel */
+// .social-snapshot {
+//     position: relative;
+//     margin-bottom: 20px;
+//     border-radius: 12px;
+//     overflow: hidden;
+//     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+//     background: #000; /* ensures black background behind video */
+// }
+
+.media-wrapper {
+    position: relative;
+    display: inline-block;
+    width: auto;          /* let width adjust automatically */
+    height: 400px;        /* fixed height, compact */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    background: #000;
+    margin: 0 auto;
+}
+
+/* Both image and video fill wrapper */
+.media-wrapper img,
+.media-wrapper video {
+    height: 100%;        /* fill wrapper height */
+    width: auto;         /* maintain aspect ratio */
+    object-fit: cover;   /* crop if needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.views {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.clickable-video {
+  cursor: pointer; /* hand cursor */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.clickable-video:hover {
+  transform: scale(1.02);       /* slight zoom */
+  opacity: 0.9;                 /* subtle dim */
+}
+
+.clickable-image {
+  cursor: pointer; /* hand cursor */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.clickable-image:hover {
+  transform: scale(1.02); /* slight zoom */
+  opacity: 0.9;           /* subtle dim */
+}
+
+.highlight-names {
+  font-family: 'Dancing Script', cursive; // playful, elegant
+  font-size: 42px;                        // bigger size
+  font-weight: 700;                        // bold enough
+  color: #c0392b;  
+  text-transform: capitalize;                       // optional: warm color
+}
+
+p {
+  color: #000;      // pure black
+}
+
+
+
+.second-paragraph {
+  margin: 0 auto;
+  max-width: 800px; /* match first paragraph width */
+  line-height: 1.6;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+.side-image {
+  position: absolute;
+  top: 50%;
+  width: 120px; /* adjust image size */
+  transform: translateY(-50%);
+  opacity: 0.95;
+}
+
+.side-image.left {
+  left: -120px; /* moved closer to paragraph */
+}
+
+.side-image.right {
+  right: -80px; /* moved closer to paragraph */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .side-image {
+    width: 90px;
+  }
+  .second-paragraph {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .side-image {
+    display: none; /* hide side images on small screens */
+  }
+  .second-paragraph {
+    font-size: 1.1rem;
+  }
+}
+
+.h7-right {
+  color: $h3-color;
+  font-weight: $bold;
+  letter-spacing: 3px;
+  line-height: $base-line-height;
+  font-family: 'Dancing Script', cursive;
+  text-transform: capitalize;
+  font-size: 50px;
+
+  text-align: right;       /* right-align text */
+  margin-right: 30px;      /* space from right edge */
+  margin-top: 10px;        /* spacing from previous section */
+  margin-bottom: 20px;     /* spacing below */
+  display: block;           /* ensure it behaves like a block element */
+}
+
+.section-divider {
+  border: none;
+  height: 2px;
+  width: 80%;
+  background-color: #d4a373;  // warm aesthetic color
+  margin: 60px auto;           // spacing from sections
+  border-radius: 1px;
 }

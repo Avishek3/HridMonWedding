@@ -57,11 +57,14 @@ h2 {
 
 h3 {
   color: $h3-color;
-  font-size: $font-size-h4;
+  // font-size: $font-size-h4;
   font-weight: $bold;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   letter-spacing: 3px;
   line-height: $base-line-height;
+  font-family: 'Dancing Script', cursive;
+  text-transform: capitalize;
+  font-size: 35px;
 }
 
 h4 {
@@ -74,3 +77,20 @@ h5 {
   text-transform: uppercase;
   font-weight: $semibold;
 }
+
+h6 {
+  color: $h3-color;
+  font-weight: $bold;
+  letter-spacing: 3px;
+  line-height: $base-line-height;
+  font-family: 'Dancing Script', cursive;
+  text-transform: capitalize;
+  font-size: 50px;
+
+  text-align: left;       /* left-align text */
+  margin-left: 30px;      /* adjust as needed */
+  margin-top: 50px;       /* optional spacing above */
+  margin-bottom: 20px;    /* optional spacing below */
+}
+
+
