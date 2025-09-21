@@ -998,26 +998,24 @@ body.modal-open {
 /* Bride portrait (mobile) */
 .mon-img-mobile {
   width: 100%;
-  max-width: 180px;   /* bigger portrait on mobile */
+  max-width: 260px;   /* bigger portrait */
   height: auto;
-  visibility: visible;
   border: none;
   box-shadow: none;
-  display: inline-block;
+  transform: scale(1.3);   /* scale up */
+  transform-origin: center; /* keeps it centered */
 }
 
-/* Bride quote image (mobile) */
 .mon-quote-img-mobile {
-  width: 100%;         
-  max-width: 100%;     /* allow full use of column */
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  visibility: visible;
   border: none !important;
   box-shadow: none !important;
-  background: transparent !important;    
-  display: block;
+  background: transparent !important;
   margin: 0 auto;
-  transform: scale(1.2); /* 🔥 scale up the quote image */
+  transform: scale(1.3);   /* scale up */
+  transform-origin: left center; /* aligns better */
 }
 
 
