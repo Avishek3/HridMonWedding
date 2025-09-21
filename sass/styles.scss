@@ -1023,30 +1023,41 @@ body.modal-open {
 
 
 
-.animated { visibility: visible; }
-
-.fadeInLeft {
-    animation-name: fadeInLeft;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+.animated { 
+  visibility: visible; 
 }
 
-.fadeInUp {
-    animation-name: fadeInUp;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+/* Portrait animation */
+.fadeInLeft {
+  animation: fadeInLeft 1s both;
 }
 
 @keyframes fadeInLeft {
-    from { opacity: 0; transform: translateX(-50px) scale(2);; }
-    to { opacity: 1; transform: translateX(0) scale(2);; }
+  from { 
+    opacity: 0; 
+    transform: translateX(-50px) scale(2); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0) scale(2); 
+  }
+}
+
+/* Quote animation */
+.fadeInUp {
+  animation: fadeInUp 1s both;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(50px) scale(2);; }
-    to { opacity: 1; transform: translateY(0) scale(2);; }
+  from { 
+    opacity: 0; 
+    transform: translateY(50px) scale(2); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(2); 
+  }
 }
-
 
 .avi-img, .avi-img-mobile {
     width: 100%;
