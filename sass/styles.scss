@@ -995,28 +995,31 @@ body.modal-open {
     visibility: hidden;
 }
 
+/* Bride portrait (mobile) */
 .mon-img-mobile {
   width: 100%;
-  max-width: 300px;   /* small portrait on mobile */
+  max-width: 180px;   /* bigger portrait on mobile */
   height: auto;
   visibility: visible;
-  border: none;       /* ensure no border */
-  box-shadow: none;  /* remove shadow if any */
+  border: none;
+  box-shadow: none;
   display: inline-block;
 }
 
 /* Bride quote image (mobile) */
 .mon-quote-img-mobile {
   width: 100%;         
-  max-width: 100%;     /* allow it to expand fully in its col */
+  max-width: 100%;     /* allow full use of column */
   height: auto;
   visibility: visible;
-  border: none !important;       /* ensure no border */
-  box-shadow: non !important;
+  border: none !important;
+  box-shadow: none !important;
   background: transparent !important;    
-  display: block;                /* remove inline-block gap */
-  margin: 0 auto; 
+  display: block;
+  margin: 0 auto;
+  transform: scale(1.2); /* 🔥 scale up the quote image */
 }
+
 
 // .mon-img, .mon-quote-img,
 // .mon-img-mobile, .mon-quote-img-mobile {
