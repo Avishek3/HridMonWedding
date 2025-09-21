@@ -328,8 +328,18 @@ header {
     margin-left: 1px;    /* removes left margin */
   }
   .logo img {
-    height: 100px;
+    height: 75px;
   }
+  .navbar,
+.navbar .container,
+.navbar .container-fluid {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+.logo {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
   ul.primary-nav {
     margin: 0 0 0 75px;
     padding: 0;
