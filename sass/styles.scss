@@ -982,17 +982,41 @@ body.modal-open {
 }
 
 
-.mon-img, .mon-img-mobile {
+// .mon-img, .mon-img-mobile {
+//     width: 100%;
+//     max-width: 300px;
+//     height: auto;
+//     visibility: hidden;
+// }
+
+// .mon-quote-img, .mon-quote-img-mobile {
+//     width: 90%;
+//     height: auto;
+//     visibility: hidden;
+// }
+
+.mon-img, .mon-quote-img,
+.mon-img-mobile, .mon-quote-img-mobile {
+  display: none;
+}
+
+/* Show desktop version on screens wider than 768px */
+@media (min-width: 768px) {
+  .mon-img, .mon-quote-img {
+    display: block;
     width: 100%;
     max-width: 300px;
     height: auto;
-    visibility: hidden;
+  }
 }
 
-.mon-quote-img, .mon-quote-img-mobile {
+/* Show mobile version on screens smaller than 768px */
+@media (max-width: 767px) {
+  .mon-img-mobile, .mon-quote-img-mobile {
+    display: block;
     width: 90%;
     height: auto;
-    visibility: hidden;
+  }
 }
 
 
@@ -1022,17 +1046,41 @@ body.modal-open {
 }
 
 
-.avi-img, .avi-img-mobile {
+// .avi-img, .avi-img-mobile {
+//     width: 100%;
+//     max-width: 300px;
+//     height: auto;
+//     visibility: hidden;
+// }
+
+// .avi-quote-img, .avi-quote-img-mobile {
+//     width: 90%;
+//     height: auto;
+//     visibility: hidden;
+// }
+
+.avi-img, .avi-quote-img,
+.avi-img-mobile, .avi-quote-img-mobile {
+  display: none;
+}
+
+/* Show desktop version on screens wider than 768px */
+@media (min-width: 768px) {
+  .avi-img, .avi-quote-img {
+    display: block;
     width: 100%;
     max-width: 300px;
     height: auto;
-    visibility: hidden;
+  }
 }
 
-.avi-quote-img, .avi-quote-img-mobile {
+/* Show mobile version on screens smaller than 768px */
+@media (max-width: 767px) {
+  .avi-img-mobile, .avi-quote-img-mobile {
+    display: block;
     width: 90%;
     height: auto;
-    visibility: hidden;
+  }
 }
 
 /* Make visible when animated */
