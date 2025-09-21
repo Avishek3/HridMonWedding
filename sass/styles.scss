@@ -1001,7 +1001,7 @@ body.modal-open {
   height: auto;
   visibility: visible;
   border: none;       /* ensure no border */
-  box-shadow: none;   /* remove shadow if any */
+  box-shadow: none;  /* remove shadow if any */
   display: inline-block;
 }
 
@@ -1011,9 +1011,11 @@ body.modal-open {
   max-width: 100%;     /* allow it to expand fully in its col */
   height: auto;
   visibility: visible;
-  border: none;        /* remove unwanted border */
-  box-shadow: none;    
-  display: inline-block;
+  border: none !important;       /* ensure no border */
+  box-shadow: non !important;
+  background: transparent !important;    
+  display: block;                /* remove inline-block gap */
+  margin: 0 auto; 
 }
 
 // .mon-img, .mon-quote-img,
