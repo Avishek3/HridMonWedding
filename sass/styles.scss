@@ -982,17 +982,38 @@ body.modal-open {
 }
 
 
-.mon-img, .mon-img-mobile {
+.mon-img{
     width: 100%;
     // max-width: 300px;
     height: auto;
     visibility: hidden;
 }
 
-.mon-quote-img, .mon-quote-img-mobile {
+.mon-quote-img {
     width: 90%;
     height: auto;
     visibility: hidden;
+}
+
+.mon-img-mobile {
+  width: 100%;
+  max-width: 120px;   /* small portrait on mobile */
+  height: auto;
+  visibility: visible;
+  border: none;       /* ensure no border */
+  box-shadow: none;   /* remove shadow if any */
+  display: inline-block;
+}
+
+/* Bride quote image (mobile) */
+.mon-quote-img-mobile {
+  width: 100%;         
+  max-width: 100%;     /* allow it to expand fully in its col */
+  height: auto;
+  visibility: visible;
+  border: none;        /* remove unwanted border */
+  box-shadow: none;    
+  display: inline-block;
 }
 
 // .mon-img, .mon-quote-img,
