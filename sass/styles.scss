@@ -994,7 +994,7 @@ body.modal-open {
 //   display: inline-block;
 // }
 
-/* ---------- Images themselves ---------- */
+/* -------- Shared Image Base -------- */
 .mon-img, .mon-img-mobile, .mon-quote-img, .mon-quote-img-mobile {
   display: block;
   width: 100%;
@@ -1003,6 +1003,7 @@ body.modal-open {
   box-shadow: none !important;
   background: transparent !important;
   margin: 0;
+  transform: var(--scale, scale(1)); /* default scale */
 }
 
 /* ---------- Animations ---------- */
@@ -1012,31 +1013,30 @@ body.modal-open {
   animation: fadeInLeft 1s both;
 }
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translateX(-40px) var(--scale, scale(1)); }
+  to   { opacity: 1; transform: translateX(0) var(--scale, scale(1)); }
 }
 
 .fadeInUp {
   animation: fadeInUp 1s both;
 }
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(40px) var(--scale, scale(1)); }
+  to   { opacity: 1; transform: translateY(0) var(--scale, scale(1)); }
 }
 
-/* Optional mobile scaling */
-/* Desktop wrappers (normal size) */
-.img-scale-wrap, .img-scale-wrap-quote {
-  transform: scale(1);      /* normal size */
-  transform-origin: center;
-  display: inline-block;
+/* ---------- Scaling ---------- */
+/* Desktop = normal */
+@media (min-width: 769px) {
+  .mon-img, .mon-quote-img {
+    --scale: scale(1);
+  }
 }
 
-/* Mobile wrappers: scale up */
+/* Mobile = larger */
 @media (max-width: 768px) {
-  .img-scale-wrap-mobile, .img-scale-wrap-quote-mobile {
-    transform: scale(1.6);  /* scale mobile images */
-    transform-origin: center;
+  .mon-img-mobile, .mon-quote-img-mobile {
+    --scale: scale(1.6);
   }
 }
 
