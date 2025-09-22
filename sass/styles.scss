@@ -981,81 +981,62 @@ body.modal-open {
   left: -100px; // start offscreen near UK
 }
 
-
-.mon-img{
-    width: 100%;
-    // max-width: 300px;
-    height: auto;
-    visibility: hidden;
+/* ---------- Wrappers: permanent scale ---------- */
+.img-scale-wrap, .img-scale-wrap-mobile, .mon-img-wrapper, .mon-img-mobile-wrapper {
+  transform: scale(2);
+  transform-origin: center;
+  display: inline-block;
 }
 
-.mon-quote-img {
-    width: 90%;
-    height: auto;
-    visibility: hidden;
+.img-scale-wrap-quote, .img-scale-wrap-quote-mobile, .mon-quote-wrapper, .mon-quote-mobile-wrapper {
+  transform: scale(1.3);
+  transform-origin: left center;
+  display: inline-block;
 }
 
-/* Bride portrait (mobile) */
-.mon-img-mobile {
+/* ---------- Images themselves ---------- */
+.mon-img, .mon-img-mobile, .mon-quote-img, .mon-quote-img-mobile {
+  display: block;
   width: 100%;
-  max-width: 260px;   /* bigger portrait */
-  height: auto;
-  border: none;
-  box-shadow: none;
-  transform: scale(2);   /* scale up */
-  transform-origin: center; /* keeps it centered */
-}
-
-.mon-quote-img-mobile {
-  width: 100%;
-  max-width: 100%;
   height: auto;
   border: none !important;
   box-shadow: none !important;
   background: transparent !important;
-  margin: 0 auto;
-  transform: scale(2);   /* scale up */
-  transform-origin: left center; /* aligns better */
+  margin: 0;
 }
 
+/* ---------- Animations ---------- */
+.animated { visibility: visible; }
 
-
-
-
-
-.animated { 
-  visibility: visible; 
-}
-
-/* Portrait animation */
 .fadeInLeft {
   animation: fadeInLeft 1s both;
 }
-
 @keyframes fadeInLeft {
-  from { 
-    opacity: 0; 
-    transform: translateX(-50px) scale(2); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateX(0) scale(2); 
-  }
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Quote animation */
 .fadeInUp {
   animation: fadeInUp 1s both;
 }
-
 @keyframes fadeInUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(50px) scale(2); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0) scale(2); 
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional mobile scaling */
+/* Desktop wrappers (normal size) */
+.img-scale-wrap, .img-scale-wrap-quote {
+  transform: scale(1);      /* normal size */
+  transform-origin: center;
+  display: inline-block;
+}
+
+/* Mobile wrappers: scale up */
+@media (max-width: 768px) {
+  .img-scale-wrap-mobile, .img-scale-wrap-quote-mobile {
+    transform: scale(1.6);  /* scale mobile images */
+    transform-origin: center;
   }
 }
 
