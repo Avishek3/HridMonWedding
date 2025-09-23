@@ -1115,60 +1115,61 @@ body.modal-open {
 //     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 //     background: #000; /* ensures black background behind video */
 // }
-
 .media-wrapper {
-    position: relative;
-    display: inline-block;
-    width: auto;          /* let width adjust automatically */
-    height: 400px;        /* fixed height, compact */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    background: #000;
-    margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 100%;              /* Take full column width */
+  max-width: 350px;         /* Limit size on desktop */
+  aspect-ratio: 3/4;        /* Keep images/videos proportional */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  background: #000;
+  margin: 0 auto 20px auto; /* Center with spacing */
 }
 
 /* Both image and video fill wrapper */
 .media-wrapper img,
 .media-wrapper video {
-    height: 100%;        /* fill wrapper height */
-    width: auto;         /* maintain aspect ratio */
-    object-fit: cover;   /* crop if needed */
-    display: block;
-    margin: 0 auto;
+  width: 100%;       /* Fill wrapper width */
+  height: 100%;      /* Fill wrapper height */
+  object-fit: cover; /* Crop if needed */
+  display: block;
 }
 
 .views {
-    position: absolute;
-    bottom: 8px;
-    right: 12px;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 13px;
-    font-weight: 500;
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-.clickable-video {
-  cursor: pointer; /* hand cursor */
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.clickable-video:hover {
-  transform: scale(1.02);       /* slight zoom */
-  opacity: 0.9;                 /* subtle dim */
-}
-
+/* Hover effects */
+.clickable-video,
 .clickable-image {
-  cursor: pointer; /* hand cursor */
+  cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.clickable-video:hover,
 .clickable-image:hover {
-  transform: scale(1.02); /* slight zoom */
-  opacity: 0.9;           /* subtle dim */
+  transform: scale(1.02);
+  opacity: 0.9;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .media-wrapper {
+    max-width: 100%;     /* Full width on mobile */
+    aspect-ratio: 4/5;   /* Slightly taller for phones */
+  }
+}
+
 
 .highlight-names {
   font-family: 'Dancing Script', cursive; // playful, elegant
