@@ -1177,8 +1177,8 @@ body.modal-open {
 /* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
     .instagram-item {
-        flex: 1 1 90%; /* almost full width */
-        max-width: 95%; /* slightly smaller than container */
+        flex: 1 1 80%; /* almost full width */
+        max-width: 85%; /* slightly smaller than container */
     }
 
     .views {
