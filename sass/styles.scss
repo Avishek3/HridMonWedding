@@ -1118,22 +1118,22 @@ body.modal-open {
 .media-wrapper {
   position: relative;
   display: block;
-  width: 100%;              /* Take full column width */
-  max-width: 350px;         /* Limit size on desktop */
-  aspect-ratio: 3/4;        /* Keep images/videos proportional */
+  width: 100%;             /* fill column */
+  max-width: 250px;        /* shrink on desktop */
+  height: auto;            /* no fixed height */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
   background: #000;
-  margin: 0 auto 20px auto; /* Center with spacing */
+  margin: 0 auto 20px auto;
 }
 
-/* Both image and video fill wrapper */
+/* Both image and video scale naturally */
 .media-wrapper img,
 .media-wrapper video {
-  width: 100%;       /* Fill wrapper width */
-  height: 100%;      /* Fill wrapper height */
-  object-fit: cover; /* Crop if needed */
+  width: 100%;        /* scale with wrapper */
+  height: auto;       /* keep original aspect ratio */
+  object-fit: contain; /* no cropping, fit inside */
   display: block;
 }
 
@@ -1165,10 +1165,10 @@ body.modal-open {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .media-wrapper {
-    max-width: 100%;     /* Full width on mobile */
-    aspect-ratio: 4/5;   /* Slightly taller for phones */
+    max-width: 90%;   /* fill most of mobile screen */
   }
 }
+
 
 
 .highlight-names {
