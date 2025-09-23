@@ -380,6 +380,31 @@ function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 }
 
+var targetDate = new Date("December 5, 2025 00:00:00").getTime();
+
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML =
+        "The big day has arrived! 🎉";
+      return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML = days + " days to go!";
+  }
+
+  // Update immediately and every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+
+
+
+
+
 // MD5 Encoding
 var MD5 = function (string) {
 
