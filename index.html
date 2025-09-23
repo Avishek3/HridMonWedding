@@ -400,22 +400,24 @@
 </section> -->
 
 <section id="instagram" class="section-padding">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-12">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
         <h3>A picture is worth a thousand words!</h3>
-        <p>Join the celebration on Instagram! Share your special moments with our wedding hashtag.
+        <p>
+          Join the celebration on Instagram! Share your special moments with our wedding hashtag.
           <a href="https://www.instagram.com/hridmon_/" target="_blank">#hridmon</a>
         </p>
       </div>
     </div>
 
-    <div class="row justify-content-center align-items-start instagram-row">
+    <!-- Instagram Row -->
+    <div class="instagram-row">
       <!-- Snapshot 1 -->
       <div class="instagram-item">
         <div class="media-wrapper">
           <img class="clickable-image" src="img/hnminsta.jpeg" alt="Instagram Snapshot 1"
-               onclick="window.open('https://www.instagram.com/hridmon_/', '_blank');">
+            onclick="window.open('https://www.instagram.com/hridmon_/', '_blank');">
         </div>
       </div>
 
@@ -426,7 +428,7 @@
         </div>
       </div>
 
-      <!-- Reel -->
+      <!-- Reel (.mp4 autoplay) -->
       <div class="instagram-item">
         <div class="media-wrapper">
           <video class="clickable-video"
@@ -435,8 +437,7 @@
                  muted
                  playsinline
                  preload="auto"
-                 controls
-                 <!-- poster="img/savedate.jpg" -->
+                 poster="img/savedate.jpg"
                  onclick="window.open('https://www.instagram.com/reel/DLtxw4StDqP/', '_blank');">
             <source src="img/savedate.MP4" type="video/mp4">
             Your browser does not support the video tag.

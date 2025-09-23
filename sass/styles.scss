@@ -1121,16 +1121,15 @@ body.modal-open {
 .instagram-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;  /* equal spacing between items */
-    gap: 15px;                        /* spacing between items on wrap */
+    justify-content: space-between;  /* desktop spacing */
+    gap: 15px;
     margin: 0 auto;
-    padding: 0 10px;                  /* margin from container edges */
+    padding: 0 10px;
 }
 
-/* Each Instagram item */
 .instagram-item {
-    flex: 1 1 30%;      /* 3 items per row, shrink if needed */
-    max-width: 300px;   /* slightly smaller */
+    flex: 1 1 30%;
+    max-width: 280px;  /* slightly smaller */
     text-align: center;
 }
 
@@ -1153,7 +1152,7 @@ body.modal-open {
     object-fit: cover;
 }
 
-/* Views overlay */
+/* Views overlay for videos */
 .views {
     position: absolute;
     bottom: 8px;
@@ -1178,18 +1177,18 @@ body.modal-open {
     opacity: 0.95;
 }
 
-/* Mobile adjustments */
+/* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
     .instagram-row {
-        flex-direction: column;  /* stack vertically */
+        flex-direction: column;  /* stack vertically on mobile */
         align-items: center;     /* center items horizontally */
-        gap: 20px;               /* space between stacked items */
+        gap: 20px;
         padding: 0 5px;
     }
 
     .instagram-item {
         flex: none;              /* do not shrink/stretch */
-        max-width: 75%;
+        max-width: 90%;          /* responsive width */
         margin: 0 auto;          /* center each item */
     }
 
