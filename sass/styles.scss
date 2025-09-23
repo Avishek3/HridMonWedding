@@ -1117,6 +1117,7 @@ body.modal-open {
 // }
 /* ---------- Media wrapper ---------- */
 /* Instagram row: flex layout with equal spacing */
+/* Instagram row: flex layout with equal spacing */
 .instagram-row {
     display: flex;
     flex-wrap: wrap;
@@ -1179,21 +1180,24 @@ body.modal-open {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .instagram-item {
-        flex: 1 1 75%;
-        max-width: 75%;
+    .instagram-row {
+        flex-direction: column;  /* stack vertically */
+        align-items: center;     /* center items horizontally */
+        gap: 20px;               /* space between stacked items */
+        padding: 0 5px;
     }
+
+    .instagram-item {
+        flex: none;              /* do not shrink/stretch */
+        max-width: 75%;
+        margin: 0 auto;          /* center each item */
+    }
+
     .views {
         font-size: 12px;
         padding: 2px 6px;
     }
-    .instagram-row {
-        gap: 10px;
-        padding: 0 5px;
-    }
 }
-
-
 
 
 
