@@ -1116,21 +1116,24 @@ body.modal-open {
 //     background: #000; /* ensures black background behind video */
 // }
 /* ---------- Media wrapper ---------- */
-/* ---------- Instagram Row ---------- */
+/* Instagram row: flex layout with equal spacing */
 .instagram-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* space between items */
+    justify-content: space-between;  /* equal spacing between items */
+    gap: 15px;                        /* spacing between items on wrap */
+    margin: 0 auto;
+    padding: 0 10px;                  /* margin from container edges */
 }
 
+/* Each Instagram item */
 .instagram-item {
-    flex: 1 1 300px; /* grow/shrink, min width 300px */
-    max-width: 400px; /* prevent overly large on desktop */
+    flex: 1 1 30%;      /* 3 items per row, shrink if needed */
+    max-width: 300px;   /* slightly smaller */
     text-align: center;
 }
 
-/* ---------- Media wrapper ---------- */
+/* Media wrapper for images & video */
 .media-wrapper {
     position: relative;
     width: 100%;
@@ -1140,16 +1143,16 @@ body.modal-open {
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* Images & videos fill the wrapper */
+/* Images & video fill wrapper */
 .media-wrapper img,
 .media-wrapper video {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: contain; /* avoids cropping */
+    object-fit: cover;
 }
 
-/* Views overlay for video */
+/* Views overlay */
 .views {
     position: absolute;
     bottom: 8px;
@@ -1174,18 +1177,22 @@ body.modal-open {
     opacity: 0.95;
 }
 
-/* ---------- Mobile adjustments ---------- */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .instagram-item {
-        flex: 1 1 80%; /* almost full width */
-        max-width: 85%; /* slightly smaller than container */
+        flex: 1 1 75%;
+        max-width: 75%;
     }
-
     .views {
         font-size: 12px;
         padding: 2px 6px;
     }
+    .instagram-row {
+        gap: 10px;
+        padding: 0 5px;
+    }
 }
+
 
 
 
