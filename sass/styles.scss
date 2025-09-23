@@ -1115,63 +1115,66 @@ body.modal-open {
 //     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 //     background: #000; /* ensures black background behind video */
 // }
+/* ---------- Media wrapper ---------- */
 .media-wrapper {
-  position: relative;
-  display: block;
-  width: auto;
-  max-width: 220px;    /* desktop */
-  height: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  background: #000;
-  margin: 0 auto 20px auto;
+    position: relative;
+    display: inline-block;
+    width: 100%;           /* fills parent */
+    max-width: 400px;      /* optional max width */
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    background: #000;
+    margin: 10px auto;
 }
 
+/* Images & videos fill the wrapper */
 .media-wrapper img,
 .media-wrapper video {
-  width: 100%;
-  height: auto;
-  object-fit: contain;  /* keep aspect */
-  display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
+/* Views overlay for video */
 .views {
-  position: absolute;
-  bottom: 8px;
-  right: 12px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 500;
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
+/* Clickable hover effect */
 .clickable-video,
 .clickable-image {
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
 .clickable-video:hover,
 .clickable-image:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+    transform: scale(1.02);
+    opacity: 0.9;
 }
 
-/* Mobile adjustments */
+/* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 auto;
-    width: auto; /* prevent column stretching */
-  }
-
-  .media-wrapper {
-    max-width: 100px;  /* smaller thumbnail size */
-    margin-bottom: 15px;
-  }
+    .media-wrapper {
+        max-width: 90%;      /* almost full width */
+        height: auto;
+    }
+    .views {
+        font-size: 12px;
+        padding: 2px 6px;
+    }
 }
+
 
 
 
