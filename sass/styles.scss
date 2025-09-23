@@ -1116,17 +1116,28 @@ body.modal-open {
 //     background: #000; /* ensures black background behind video */
 // }
 /* ---------- Media wrapper ---------- */
+/* ---------- Instagram Row ---------- */
+.instagram-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* space between items */
+}
+
+.instagram-item {
+    flex: 1 1 300px; /* grow/shrink, min width 300px */
+    max-width: 400px; /* prevent overly large on desktop */
+    text-align: center;
+}
+
+/* ---------- Media wrapper ---------- */
 .media-wrapper {
     position: relative;
-    display: inline-block;
-    width: 100%;           /* fills parent */
-    max-width: 400px;      /* optional max width */
-    height: auto;
+    width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     background: #000;
-    margin: 10px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* Images & videos fill the wrapper */
@@ -1134,8 +1145,8 @@ body.modal-open {
 .media-wrapper video {
     width: 100%;
     height: auto;
-    object-fit: cover;
     display: block;
+    object-fit: contain; /* avoids cropping */
 }
 
 /* Views overlay for video */
@@ -1151,7 +1162,7 @@ body.modal-open {
     font-weight: 500;
 }
 
-/* Clickable hover effect */
+/* Hover effects */
 .clickable-video,
 .clickable-image {
     cursor: pointer;
@@ -1159,21 +1170,23 @@ body.modal-open {
 }
 .clickable-video:hover,
 .clickable-image:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
+    transform: scale(1.03);
+    opacity: 0.95;
 }
 
 /* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
-    .media-wrapper {
-        max-width: 90%;      /* almost full width */
-        height: auto;
+    .instagram-item {
+        flex: 1 1 90%; /* almost full width */
+        max-width: 95%; /* slightly smaller than container */
     }
+
     .views {
         font-size: 12px;
         padding: 2px 6px;
     }
 }
+
 
 
 
