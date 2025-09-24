@@ -1332,43 +1332,50 @@ p {
 
 .countdown-container {
   position: absolute;
-  bottom: 20px;           /* distance from bottom of section */
+  bottom: 20px;           
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
+  display: flex;            /* keep horizontal layout */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;                 /* space between boxes */
 }
 
-/* Countdown boxes */
 .time-box {
   background: rgba(255, 255, 255, 0.9); 
-  padding: 10px 15px;      /* smaller padding */
+  padding: 10px 15px;      
   border-radius: 6px;
-  min-width: 50px;          /* smaller width */
+  min-width: 50px;          
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .time-box span {
-  font-size: 28px;          /* smaller numbers */
+  font-size: 28px;          
   font-weight: bold;
   display: block;
   color: #111;
 }
 
 .time-box small {
-  font-size: 12px;          /* smaller labels */
+  font-size: 12px;          
   color: #666;
 }
 
 .colon {
-  font-size: 24px;          /* smaller colon */
+  font-size: 24px;          
   font-weight: bold;
   color: #444;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+  .countdown-container {
+    gap: 5px;               /* smaller gap on mobile */
+  }
+
   .time-box {
     padding: 8px 10px;
     min-width: 40px;
