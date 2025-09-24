@@ -1400,7 +1400,7 @@ p {
 /* Make map images responsive */
 .responsive-map {
     width: 100%;
-    max-width: 200px;       /* prevents being too large on desktop */
+    max-width: 200px;       /* desktop size */
     height: auto;
     object-fit: cover;      /* ensures image crops nicely */
     border-radius: 8px;
@@ -1413,16 +1413,12 @@ p {
     margin-bottom: 20px;
 }
 
-/* Optional: center on small screens */
+/* Smaller devices: reduce map width and center */
 @media (max-width: 768px) {
     .map-item {
         margin: 0 auto 20px auto;
     }
-}
-
-/* Smaller devices: reduce map width */
-@media (max-width: 480px) {
     .responsive-map {
-        max-width: 75px;    /* smaller on very small screens */
+        max-width: 75px;    /* smaller on tablets and phones */
     }
 }
