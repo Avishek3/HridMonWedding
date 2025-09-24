@@ -380,19 +380,39 @@ function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 }
 
+
 (function() {
   var targetDate = new Date("December 5, 2025 00:00:00").getTime();
+
+  function pad(n) {
+    return n < 10 ? "0" + n : n;
+  }
 
   function updateCountdown() {
     var now = new Date().getTime();
     var distance = targetDate - now;
-    var days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
-    document.getElementById("days-number").innerText = days;
+
+    if (distance < 0) {
+      document.getElementById("countdown").innerHTML = "It's Time 🎉";
+      return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = pad(days);
+    document.getElementById("hours").innerText = pad(hours);
+    document.getElementById("minutes").innerText = pad(minutes);
+    document.getElementById("seconds").innerText = pad(seconds);
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000 * 60 * 60); // update every hour
+  setInterval(updateCountdown, 1000);
 })();
+
+
 
 
 

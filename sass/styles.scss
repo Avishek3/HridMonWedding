@@ -1330,33 +1330,45 @@ p {
 
 }
 
-.countdown-wrapper {
+.countdown-container {
+  position: absolute;  /* position relative to .hero */
+  bottom: 30px;        /* distance from bottom of section */
+  left: 50%;           /* center horizontally */
+  transform: translateX(-50%);
+  width: auto;
   text-align: center;
-  margin-top: 150px; /* lifts the countdown */
-  position: relative;
-  z-index: 2;
 }
 
-.countdown-box {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.4); /* semi-transparent white */
-  color: #111;
-  border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-#days-number {
+.time-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  border-radius: 8px;
+  min-width: 70px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.time-box span {
+  font-size: 36px;
+  font-weight: bold;
   display: block;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1;
+  color: #111;
 }
 
-.countdown-label {
-  font-size: 16px;
-  font-weight: 400;
-  color: #1b1b1b;
-  margin-top: 8px;
-  letter-spacing: 1px;
+.time-box small {
+  font-size: 14px;
+  color: #666;
+}
+
+.colon {
+  font-size: 32px;
+  font-weight: bold;
+  color: #444;
 }
