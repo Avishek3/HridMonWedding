@@ -202,7 +202,7 @@ flyPlane();
         '<iframe allowtransparency="true" frameborder="0" scrolling="no" ' +
         'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location.href) +
         '&text=' + encodeURIComponent(document.title) +
-        '&via=ramswarooppatra&hashtags=ramandantara&count=horizontal" ' +
+        '&hashtags=hridmon&count=horizontal" ' +
         'style="width:105px; height:21px;"></iframe>' +
 
         // Facebook Like button
