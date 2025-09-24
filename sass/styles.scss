@@ -1372,3 +1372,27 @@ p {
   font-weight: bold;
   color: #444;
 }
+
+@media (max-width: 768px) {
+  .countdown-container {
+    bottom: 20px;          /* slightly closer to bottom */
+    transform: translateX(-50%);
+  }
+
+  .time-box {
+    padding: 10px 15px;
+    min-width: 50px;
+  }
+
+  .time-box span {
+    font-size: 28px;
+  }
+
+  .time-box small {
+    font-size: 12px;
+  }
+
+  .colon {
+    font-size: 24px;
+  }
+}
