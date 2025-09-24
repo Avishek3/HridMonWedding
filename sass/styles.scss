@@ -1396,3 +1396,26 @@ p {
     font-size: 24px;
   }
 }
+
+/* Make map images responsive */
+.responsive-map {
+    width: 100%;
+    max-width: 600px;       /* prevents being too large on desktop */
+    height: auto;
+    object-fit: cover;      /* ensures image crops nicely */
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Add spacing for mobile */
+.map-item {
+    margin-bottom: 20px;
+}
+
+/* Optional: center on small screens */
+@media (max-width: 768px) {
+    .map-item {
+        margin: 0 auto 20px auto;
+    }
+}
